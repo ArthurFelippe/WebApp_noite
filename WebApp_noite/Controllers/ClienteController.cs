@@ -2,7 +2,7 @@
 
 namespace WebApp_noite.Controllers
 {
-    public class ProdutoController : Controller
+    public class ClienteController : Controller
     {
         public IActionResult Lista()
         {
@@ -11,9 +11,9 @@ namespace WebApp_noite.Controllers
 
         public IActionResult Cadastrar()
         {
-
             return View();
-
         }
+
+
     }
 }
