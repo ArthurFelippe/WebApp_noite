@@ -1,4 +1,5 @@
-﻿<div class="row">
+﻿@model List<WebApp_noite.Models.ClienteModel>
+<div class="row">
 
     <div class="col-12
 ">
@@ -37,60 +38,32 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
+                            <th>Id</th>
                             <th>Nome</th>
-                            <th>Idade</th>
-                            <th>E-mail</th>
+                            <th>Telefone</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Felippe</td>
-                            <td>23</td>
-                            <td>felippe@5gmail.com</td>
-                            <td>
-                                <a href="/Produto/Editar/1" class="btn btn-warning">
-                                    Editar
-                                </a>
-                                <a href="/Produto/Excluir/1" class="btn btn-danger">
-                                    Excluir
-                                </a>
-                            </td>
 
+                        @foreach (var cliente in Model)
+                        {
+                            <tr>
 
-                        </tr>
+                                <td>@cliente.Id</td>
+                                <td>@cliente.Nome</td>
+                                <td>@cliente.Telefone</td>
+                                <td>
+                                    <a href="/Cliente/Editar/@cliente.Id" class="btn btn-warning">
+                                        Editar
+                                    </a>
+                                    <a href="/Cliente/Excluir/@cliente.Id" class="btn btn-danger">
+                                        Excluir
+                                    </a>
+                                </td>
 
-                        <tr>
-                            <td>Maria</td>
-                            <td>20</td>
-                            <td>maria@gmail.com</td>
-                            <td>
-                                <a href="/Produto/Editar/2" class="btn btn-warning">
-                                    Editar
-                                </a>
-                                <a href="/Produto/Excluir/2" class="btn btn-danger">
-                                    Excluir
-                                </a>
-                            </td>
-
-
-                        </tr>
-
-                        <tr>
-                            <td>Lucas</td>
-                            <td>28</td>
-                            <td>lucas2@hotmail.com</td>
-                            <td>
-                                <a href="/Cliente/Editar/3" class="btn btn-warning">
-                                    Editar
-                                </a>
-                                <a href="/Cliente/Excluir/3" class="btn btn-danger">
-                                    Excluir
-                                </a>
-                            </td>
-
-
-                        </tr>
+                            </tr>
+                            }
 
                     </tbody>
                 </table>
